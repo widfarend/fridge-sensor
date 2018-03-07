@@ -33,7 +33,7 @@ node and npm installed. If not, please visit the [npm.js](https://www.npmjs.com/
 
 ### Development server
 
-Run `npm run start` for a dev server. Navigate to `http://localhost:9001/api/v1/averages`. The app will automatically reload if you change any of the source files.
+Run `npm run start` for a dev server. Navigate to [http://localhost:9001/api/v1/averages](http://localhost:9001/api/v1/averages). The app will automatically reload if you change any of the source files.
 
 ### Configuration
 
