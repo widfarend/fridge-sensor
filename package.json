@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "NODE_ENV=dev nodemon --exec \"node -r dotenv/config\" src/index.js",
+    "start": "NODE_ENV=dev nodemon --exec \"node -r dotenv/config\" src/index.js",
     "test": "mocha --opts mocha.opts",
     "test:watch": "nodemon --exec \"mocha --recursive --opts mocha.opts\""
   },
