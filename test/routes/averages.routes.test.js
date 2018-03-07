@@ -19,7 +19,11 @@ describe('routes: averages', () => {
                     should.not.exist(err);
                     res.status.should.eql(200);
                     res.type.should.eql('application/json');
-                    res.body.should.include.keys('id', 'average', 'median', 'mode');
+                    res.body.should.be.an('array');
+                    res.body.forEach((data) => {
+                        data.should.be.an('object');
+                        data.should.include.keys('id', 'average', 'median', 'mode');
+                    });
                     done();
                 })
         })
