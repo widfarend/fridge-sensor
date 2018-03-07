@@ -3,14 +3,14 @@ const should = Chai.should();
 
 const Average = require("../../src/utils/average");
 
-describe("utils: Average", () => {
+describe("Utils: Average", () => {
     beforeEach(() => {
         average = new Average();
     });
 
     it("should return the average of an array of values", () => {
-        let averageArray = [4.12, 3.65, 1.28, 3.71, 9.7 ];
-        let expected = 4.491999999999999;
+        let averageArray = [ 1, 2, 3, 4 ];
+        let expected = 2.5;
 
         let result = average.getAverage(averageArray);
 
@@ -18,8 +18,8 @@ describe("utils: Average", () => {
     });
 
     it("should return the median of an array of values", () => {
-        let medianArray = [1.28, 3.65, 3.71, 4.12, 9.7 ];
-        let expected = 3.71;
+        let medianArray = [ 1, 5, 7, 9, 12 ];
+        let expected = 7;
 
         let result = average.getMedian(medianArray);
 

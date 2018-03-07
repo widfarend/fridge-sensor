@@ -1,27 +1,17 @@
-
 // Configure the environment
-const server = require('../../src/index');
-const PATH = '/api/v1/averages';
+const DatabaseConnect = require('../../src/db/connect');
 
 // Configure the test library
 const chai = require('chai');
 const should = chai.should();
-const chaiHttp = require('chai-http');
-chai.use(chaiHttp);
 
-describe('routes: averages', () => {
-    describe(`GET ${PATH}`, () => {
-        it('should return a json object containing the an id and average, median and mode temperatures', (done) => {
-            chai
-                .request(server)
-                .get(`${PATH}`)
-                .end((err, res) => {
-                    should.not.exist(err);
-                    res.status.should.eql(200);
-                    res.type.should.eql('application/json');
-                    res.body.should.include.keys('id', 'average', 'median', 'mode');
-                    done();
-                })
+describe('db: connect', () => {
+    describe(`Find: Get Data`, () => {
+        it('should return a json object containing the an id and average, median and mode temperatures', async () => {
+            const db = new DatabaseConnect();
+            const res = await db.find();
+			res.should.be.an('object');
+            res.should.include.keys('id', 'average', 'median', 'mode');
         })
     })
 });
