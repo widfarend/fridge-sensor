@@ -8,11 +8,11 @@ const fs = require('fs');
  *
  * @constructor
  */
-const DatabaseConnect = function() {
-	this.find = function() {
-		let dataPath = `${RootPath}/${process.env.DATA_PATH}`;
-		return JSON.parse(fs.readFileSync(dataPath, 'utf8'));
-	}
+const DatabaseConnect = function() {};
+
+DatabaseConnect.prototype.find = function() {
+    let dataPath = `${RootPath}/${process.env.DATA_PATH}`;
+    return JSON.parse(fs.readFileSync(dataPath, 'utf8'));
 };
 
 module.exports = DatabaseConnect;
